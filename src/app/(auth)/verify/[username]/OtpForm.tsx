@@ -43,7 +43,6 @@ export default function OtpForm({ usenamePropesSend }: usernameParams) {
   const onSubmit = () => {};
 
   async function oncolmenHabdler(value: string) {
-    console.log(value);
     setError(undefined);
     startTransation(async () => {
       const res = await graphqlclient.request(creteOtpMutaion, {

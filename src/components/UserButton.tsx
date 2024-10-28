@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,23 +16,22 @@ import Link from "next/link";
 import { Check, LogOutIcon, Monitor, Moon, Sun, UserIcon } from "lucide-react";
 import { logout } from "@/app/(auth)/actions";
 import { cn } from "@/lib/utils";
-import { useTheme } from "next-themes";
 import { useAppSelector } from "@/lib/hooks";
+import { useTheme } from "next-themes";
 
 interface UserButtonProps {
   className?: string;
 }
 
 export default function UserButton({ className }: UserButtonProps) {
-  const user=useAppSelector((state)=>state.loginlice.user)
+  const user = useAppSelector((state) => state.loginlice.user);
 
-  if(!user){
-    throw new Error("you are not login")
-  }
+  if (!user) {
+    throw new Error("unathorise")
+  };
   const { theme, setTheme } = useTheme();
 
   return (
-   
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button className={cn("flex-none rounded-full", className)}>
