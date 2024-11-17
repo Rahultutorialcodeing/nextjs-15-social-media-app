@@ -1,13 +1,16 @@
-import { useAppSelector } from "@/lib/hooks";
-import React from "react";
+"use client";
+import PostEditor from "@/components/Post/editor/PostEditor";
+import ForYouFeed from "./ForYouFeed";
 
 export default function Home() {
+ 
+
   return (
-    <div className="flex w-full min-w-0 gap-5">
+    <main className="flex min-h-screen w-full min-w-0 gap-5">
       <div className="w-full min-w-0 space-y-5">
-        <p>rahu</p>
-        <p>pal</p>
+        <PostEditor />
+        <ForYouFeed/>
       </div>
-    </div>
+    </main>
   );
 }

@@ -15,20 +15,21 @@ export const signupSchema = z.object({
 export type SignupValues = z.infer<typeof signupSchema>;
 
 export const optSchema = z.object({
-  username:requiredString,
+  username: requiredString,
   code: requiredString,
 });
 
 export type OtpValues = z.infer<typeof optSchema>;
 
-export const loginSchema = z
-  .object({
-    usernameOremail: requiredString, 
-    passwordHash: requiredString,
-  })
+export const loginSchema = z.object({
+  usernameOremail: requiredString,
+  passwordHash: requiredString,
+});
 
 export type loginValues = z.infer<typeof loginSchema>;
 
 export const createPostSchema = z.object({
-  content: requiredString,
+  content: z.string().trim(),
 });
+
+export type createPostValue = z.infer<typeof createPostSchema>;

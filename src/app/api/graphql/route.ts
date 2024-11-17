@@ -6,7 +6,7 @@ const typeDefs = `#graphql
  ${User.types}
 
  type Query {
-    hello: String
+  ${User.query}
   }
 
   type Mutation{
@@ -16,7 +16,7 @@ const typeDefs = `#graphql
 
 const resolvers = {
   Query: {
-    hello: () => "world",
+   ...User.resolver.queries
   },
   Mutation: {
     ...User.resolver.mutation,
